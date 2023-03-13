@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Paris-DROPS Design",
+    "price": 4.99,
+    "image": "./product-photos/wloczka-paris-drops-removebg-preview.png",
+    "description": "100% Cotton"
+  },
+  {
+    "id": 2,
+    "title": "Cotton yarn-DROPS MUSKAT-Mercerized",
+    "price": 4.30,
+    "image": "./product-photos/wloczka-muskat-drops-removebg-preview.png",
+    "description": "100% mercerized cotton"
+  }
+]

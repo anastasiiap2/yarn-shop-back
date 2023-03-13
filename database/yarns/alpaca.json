@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Yarn Wool With Alpaca-NEPAL-DROPS",
+    "price": 3.29,
+    "image": "./product-photos/wloczka-welna-z-alpaka-nepal-drops-50g-removebg-preview.png",
+    "description": "65% Wool, 35% Alpaca"
+  },
+  {
+    "id": 2,
+    "title": "Drops PUNA - Extra Soft Alpaca 100%",
+    "price": 3.90,
+    "image": "./product-photos/drops-puna-ekstra-miekka-alpaka-100-removebg-preview.png",
+    "description": "100% Alpaca"
+  },
+  {
+    "id": 3,
+    "title": "Yarn 74% Alpaca-SKY-DROPS-50g",
+    "price": 3.95,
+    "image": "./product-photos/wloczka-74-alpaka-sky-drops-50g-removebg-preview.png",
+    "description": "74% Alpaca, 8% Wool, 18% Polyamide"
+  }
+]
