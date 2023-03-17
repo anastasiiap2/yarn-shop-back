@@ -13,9 +13,17 @@ const _ = require('lodash');
 app.use(cors());
 app.use(bodyParser.json());
 
+//You'll have to set your server up to return the index page on every route request
+// except for api routes that need to be handled by the server.
+// This should set your server up to let React Router handle deeplink requests.
+app.get('*', function (req, res) {
+    res.send('public/index.html')
+})
+
 // get all items
-app.get("/items", (req, res) => {
-    fs.readFile("./database/knitting-needles.json", "utf8", (err, jsonString) => {
+
+app.get("/items/crochet-hooks", (req, res) => {
+    fs.readFile("./database/crochet-hooks.json", "utf8", (err, jsonString) => {
         if (err !== null) {
             console.log("Failed to read the JSON file");
             res.sendStatus(500);
@@ -25,8 +33,16 @@ app.get("/items", (req, res) => {
     })
 })
 
-// Alternative:
-// app.use(express.static(path.join(__dirname, 'database')))
+app.get("/items/knitting-needles", (req, res) => {
+    fs.readFile("./database/knitting-needles.json", "utf8", (err, jsonString) => {
+        if (err !== null) {
+            console.log("Failed to read the JSON file");
+            res.sendStatus(500);
+            return;
+        }
+        res.send(jsonString);
+    })
+})
 
 app.get(`/image/:id`, (req, res) => {
     const imagePath = __dirname + '/public/knitting-needles/' + req.params.id;
@@ -47,7 +63,8 @@ app.get(`/image/:id`, (req, res) => {
         res.send(image)
     })
 })
-
+// Alternative:
+// app.use(express.static(path.join(__dirname, 'database')))
 
 app.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
