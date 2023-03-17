@@ -16,9 +16,28 @@ app.use(bodyParser.json());
 //You'll have to set your server up to return the index page on every route request
 // except for api routes that need to be handled by the server.
 // This should set your server up to let React Router handle deeplink requests.
-app.get('*', function (req, res) {
-    res.send('public/index.html')
-})
+
+// app.get('*', function (req, res) {
+//     res.send('public/index.html')
+// })
+
+const readingImage = () => {
+    fs.readFile(imagePath, (err, image) => {
+        if (err !== null) {
+            console.log("Failed to read the image file");
+            res.sendStatus(500);
+            return;
+        }
+        if (!image) {
+            res.sendStatus(404);
+            return;
+        }
+        res.set('Content-Type', 'image/png')
+        res.send(image)
+    })
+}
+
+
 
 // get all items
 
@@ -44,27 +63,20 @@ app.get("/items/knitting-needles", (req, res) => {
     })
 })
 
-app.get(`/image/:id`, (req, res) => {
+app.get(`/image/knitting-needles/:id`, (req, res) => {
     const imagePath = __dirname + '/public/knitting-needles/' + req.params.id;
-
     // res.sendFile(__dirname +imagePath)
-
-    fs.readFile(imagePath, (err, image) => {
-        if (err !== null) {
-            console.log("Failed to read the image file");
-            res.sendStatus(500);
-            return;
-        }
-        if (!image) {
-            res.sendStatus(404);
-            return;
-        }
-        res.set('Content-Type', 'image/png')
-        res.send(image)
-    })
+    readingImage()
 })
+
+app.get(`/image/crochet-hooks/:id`, (req, res) => {
+    const imagePath = __dirname + '/public/crochet-hooks/' + req.params.id;
+    // res.sendFile(__dirname +imagePath)
+    readingImage()
+})
+
 // Alternative:
-// app.use(express.static(path.join(__dirname, 'database')))
+// app.use(express.static(path.join(__dirname, 'public')))
 
 app.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
