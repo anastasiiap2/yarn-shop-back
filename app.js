@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 //     res.send('public/index.html')
 // })
 
-const readingImage = () => {
+const readingImage = (imagePath, res) => {
     fs.readFile(imagePath, (err, image) => {
         if (err !== null) {
             console.log("Failed to read the image file");
@@ -62,18 +62,34 @@ app.get("/items/knitting-needles", (req, res) => {
         res.send(jsonString);
     })
 })
+// app.get("/items/auxiliary-tools", (req, res) => {
+//     fs.readFile("./database/auxiliary-tools.json", "utf8", (err, jsonString) => {
+//         if (err !== null) {
+//             console.log("Failed to read the JSON file");
+//             res.sendStatus(500);
+//             return;
+//         }
+//         res.send(jsonString);
+//     })
+// })
 
 app.get(`/image/knitting-needles/:id`, (req, res) => {
     const imagePath = __dirname + '/public/knitting-needles/' + req.params.id;
     // res.sendFile(__dirname +imagePath)
-    readingImage()
+    readingImage(imagePath, res)
 })
 
 app.get(`/image/crochet-hooks/:id`, (req, res) => {
     const imagePath = __dirname + '/public/crochet-hooks/' + req.params.id;
     // res.sendFile(__dirname +imagePath)
-    readingImage()
+    readingImage(imagePath, res)
 })
+
+// app.get(`/image/auxiliary-tools/:id`, (req, res) => {
+//     const imagePath = __dirname + '/public/crochet-hooks/' + req.params.id;
+//     // res.sendFile(__dirname +imagePath)
+//     readingImage(imagePath)
+// })
 
 // Alternative:
 // app.use(express.static(path.join(__dirname, 'public')))
