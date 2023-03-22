@@ -74,6 +74,63 @@ app.get("/items/auxiliary-tools", (req, res) => {
     })
 })
 
+app.get("/items/acrylic-yarn", (req, res) => {
+    fs.readFile("./database/yarns/acrylic.json", "utf8", (err, jsonString) => {
+        if (err !== null) {
+            console.log("Failed to read the JSON file");
+            res.sendStatus(500);
+            return;
+        }
+        res.send(jsonString);
+    })
+})
+
+app.get("/items/cotton-yarn", (req, res) => {
+    fs.readFile("./database/yarns/cotton.json", "utf8", (err, jsonString) => {
+        if (err !== null) {
+            console.log("Failed to read the JSON file");
+            res.sendStatus(500);
+            return;
+        }
+        res.send(jsonString);
+    })
+})
+
+app.get("/items/mohair-yarn", (req, res) => {
+    fs.readFile("./database/yarns/mohair.json", "utf8", (err, jsonString) => {
+        if (err !== null) {
+            console.log("Failed to read the JSON file");
+            res.sendStatus(500);
+            return;
+        }
+        res.send(jsonString);
+    })
+})
+
+app.get("/items/polyester-yarn", (req, res) => {
+    fs.readFile("./database/yarns/polyester.json", "utf8", (err, jsonString) => {
+        if (err !== null) {
+            console.log("Failed to read the JSON file");
+            res.sendStatus(500);
+            return;
+        }
+        res.send(jsonString);
+    })
+})
+
+app.get("/items/alpaca-yarn", (req, res) => {
+    fs.readFile("./database/yarns/alpaca.json", "utf8", (err, jsonString) => {
+        if (err !== null) {
+            console.log("Failed to read the JSON file");
+            res.sendStatus(500);
+            return;
+        }
+        res.send(jsonString);
+    })
+})
+
+
+// get images
 app.get(`/image/knitting-needles/:id`, (req, res) => {
     const imagePath = __dirname + '/public/knitting-needles/' + req.params.id;
     // res.sendFile(__dirname +imagePath)
@@ -88,6 +145,35 @@ app.get(`/image/crochet-hooks/:id`, (req, res) => {
 
 app.get(`/image/auxiliary-tools/:id`, (req, res) => {
     const imagePath = __dirname + '/public/auxiliary-tools/' + req.params.id;
+    // res.sendFile(__dirname +imagePath)
+    readingImage(imagePath, res)
+})
+
+app.get(`/image/acrylic-yarn/:id`, (req, res) => {
+    const imagePath = __dirname + '/public/acrylic-yarn/' + req.params.id;
+    // res.sendFile(__dirname +imagePath)
+    readingImage(imagePath, res)
+})
+
+app.get(`/image/cotton-yarn/:id`, (req, res) => {
+    const imagePath = __dirname + '/public/cotton-yarn/' + req.params.id;
+    // res.sendFile(__dirname +imagePath)
+    readingImage(imagePath, res)
+})
+
+app.get(`/image/mohair-yarn/:id`, (req, res) => {
+    const imagePath = __dirname + '/public/mohair-yarn/' + req.params.id;
+    // res.sendFile(__dirname +imagePath)
+    readingImage(imagePath, res)
+})
+
+app.get(`/image/polyester-yarn/:id`, (req, res) => {
+    const imagePath = __dirname + '/public/polyester-yarn/' + req.params.id;
+    // res.sendFile(__dirname +imagePath)
+    readingImage(imagePath, res)
+})
+app.get(`/image/alpaca-yarn/:id`, (req, res) => {
+    const imagePath = __dirname + '/public/alpaca-yarn/' + req.params.id;
     // res.sendFile(__dirname +imagePath)
     readingImage(imagePath, res)
 })

@@ -1,16 +1,50 @@
 [
   {
-    "id": 1,
+    "id": 6001,
     "title": "Paris-DROPS Design",
     "price": 4.99,
-    "image": "./product-photos/wloczka-paris-drops-removebg-preview.png",
-    "description": "100% Cotton"
+    "image": "http://127.0.0.1:3000/image/cotton-yarn/6001.png"
   },
   {
-    "id": 2,
+    "id": 6002,
     "title": "Cotton yarn-DROPS MUSKAT-Mercerized",
     "price": 4.30,
-    "image": "./product-photos/wloczka-muskat-drops-removebg-preview.png",
-    "description": "100% mercerized cotton"
+    "image": "http://127.0.0.1:3000/image/cotton-yarn/6002.png"
+  },
+  {
+    "id": 6003,
+    "title": "Cotton Yarn - SAFRAN - DROPS",
+    "price": 5.62,
+    "image": "http://127.0.0.1:3000/image/cotton-yarn/6003.png"
+  },
+  {
+    "id": 6004,
+    "title": "YARNART JEANS Cotton Yarn",
+    "price": 7.51,
+    "image": "http://127.0.0.1:3000/image/acrylic-yarn/4001.png"
+  },
+  {
+    "id": 6005,
+    "title": "Cotton + Wool Yarn - Cotton Merino - DROPS",
+    "price": 14.62,
+    "image": "http://127.0.0.1:3000/image/cotton-yarn/6005.png"
+  },
+  {
+    "id": 6006,
+    "title": "Yarn - BELLE - DROPS - Viscose + Cotton + Linen",
+    "price": 7.93,
+    "image": "http://127.0.0.1:3000/image/cotton-yarn/6006.png"
+  },
+  {
+    "id": 6007,
+    "title": "Bomull-Lin DROPS - 50g - Cotton And Linen Yarn",
+    "price": 11.66,
+    "image": "http://127.0.0.1:3000/image/cotton-yarn/6007.png"
+  },
+  {
+    "id": 6008,
+    "title": "DROPS Cotton Light - Summer Yarn Made Of Cotton And Polyester",
+    "price": 5.48,
+    "image": "http://127.0.0.1:3000/image/cotton-yarn/6008.png"
   }
 ]

@@ -1,0 +1,14 @@
+[
+  {
+    "id": 5001,
+    "title": "Drops Kid Silk - Mohair + Silk",
+    "price": 18.72,
+    "image": "http://127.0.0.1:3000/image/mohair-yarn/5001.png"
+  },
+  {
+    "id": 5002,
+    "title": "Mohair Yarn - Mohair Boucle - De Witte Engel - Various Colors",
+    "price": 27.56,
+    "image": "http://127.0.0.1:3000/image/mohair-yarn/5002.png"
+  }
+]
