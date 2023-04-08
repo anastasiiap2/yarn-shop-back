@@ -178,6 +178,11 @@ app.get(`/image/alpaca-yarn/:id`, (req, res) => {
     readingImage(imagePath, res)
 })
 
+app.get("/items/:id", (req, res) => {
+    const imagePath = __dirname + '/public/items/' + req.params.id;
+    readingImage(imagePath, res)
+})
+
 // Alternative:
 // app.use(express.static(path.join(__dirname, 'public')))
 
