@@ -183,6 +183,11 @@ app.get("/items/:id", (req, res) => {
     readingImage(imagePath, res)
 })
 
+app.get("/image/items/:id", (req, res) => {
+    const imagePath = __dirname + '/public/items/' + req.params.id;
+    readingImage(imagePath, res)
+})
+
 // Alternative:
 // app.use(express.static(path.join(__dirname, 'public')))
 

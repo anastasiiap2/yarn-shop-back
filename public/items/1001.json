@@ -1,5 +1,10 @@
 {
   "id": 1001,
-  "title": "test",
-  "price": 100.30
+  "title": "KnitPro Basix Spec Replacement Knitting Needles [Short]",
+  "price": 20.50,
+  "image0": "http://127.0.0.1:3000/image/knitting-needles/1001.png",
+  "image1": "http://127.0.0.1:3000/image/items/1001a.png",
+  "image2": "http://127.0.0.1:3000/image/items/1001b.png",
+  "sizes": ["3 mm", "3.25 mm", "3.5 mm", "3.75 mm", "4 mm", "4.5 mm", "5 mm", "5.5 mm", "6 mm"],
+  "description": "KnitPro basix birch wood knitting needles.\nKnitting length: 8.6 cm\nMaterial: Birch wood, metal"
 }
