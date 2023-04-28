@@ -56,9 +56,15 @@ app.get(`/image/:name/:id`, (req, res) => {
 })
 
 
-app.get("/items/:id", (req, res) => {
-    const imagePath = __dirname + '/public/items/' + req.params.id;
-    readingImage(imagePath, res)
+app.get("/item/:id", (req, res) => {
+    fs.readFile(__dirname + `/public/items/${req.params.id}.json`, "utf8", (err, jsonString) => {
+        try {
+            res.send(jsonString);
+        } catch (error) {
+            console.error("Failed to read the JSON file " + error);
+            res.sendStatus(500);
+        }
+    })
 })
 
 app.get("/image/items/:id", (req, res) => {
