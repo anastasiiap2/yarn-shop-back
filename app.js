@@ -10,6 +10,7 @@ const app = express();
 const cors = require('cors');
 const _ = require('lodash');
 
+
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -24,7 +25,7 @@ app.use(bodyParser.json());
 const readingImage = (imagePath, res) => {
     fs.readFile(imagePath, (err, image) => {
         if (err !== null) {
-            console.log("Failed to read the image file");
+            console.error("Failed to read the image file" + err);
             res.sendStatus(500);
             return;
         }
@@ -37,146 +38,23 @@ const readingImage = (imagePath, res) => {
     })
 }
 
-
-
-// get all items
-
-app.get("/items/crochet-hooks", (req, res) => {
-    fs.readFile("./database/crochet-hooks.json", "utf8", (err, jsonString) => {
-        if (err !== null) {
-            console.log("Failed to read the JSON file");
+app.get("/items/:name", (req, res) => {
+    fs.readFile(`./database/${req.params.name}.json`, "utf8", (err, jsonString) => {
+        try {
+            res.send(jsonString);
+        } catch (error) {
+            console.error("Failed to read the JSON file " + error);
             res.sendStatus(500);
-            return;
         }
-        res.send(jsonString);
     })
 })
-
-app.get("/items/knitting-needles", (req, res) => {
-    fs.readFile("./database/knitting-needles.json", "utf8", (err, jsonString) => {
-        if (err !== null) {
-            console.log("Failed to read the JSON file");
-            res.sendStatus(500);
-            return;
-        }
-        res.send(jsonString);
-    })
-})
-
-app.get("/items/auxiliary-tools", (req, res) => {
-    fs.readFile("./database/auxiliary-tools.json", "utf8", (err, jsonString) => {
-        if (err !== null) {
-            console.log("Failed to read the JSON file");
-            res.sendStatus(500);
-            return;
-        }
-        res.send(jsonString);
-    })
-})
-
-app.get("/items/acrylic-yarn", (req, res) => {
-    fs.readFile("./database/yarns/acrylic.json", "utf8", (err, jsonString) => {
-        if (err !== null) {
-            console.log("Failed to read the JSON file");
-            res.sendStatus(500);
-            return;
-        }
-        res.send(jsonString);
-    })
-})
-
-app.get("/items/cotton-yarn", (req, res) => {
-    fs.readFile("./database/yarns/cotton.json", "utf8", (err, jsonString) => {
-        if (err !== null) {
-            console.log("Failed to read the JSON file");
-            res.sendStatus(500);
-            return;
-        }
-        res.send(jsonString);
-    })
-})
-
-app.get("/items/mohair-yarn", (req, res) => {
-    fs.readFile("./database/yarns/mohair.json", "utf8", (err, jsonString) => {
-        if (err !== null) {
-            console.log("Failed to read the JSON file");
-            res.sendStatus(500);
-            return;
-        }
-        res.send(jsonString);
-    })
-})
-
-app.get("/items/polyester-yarn", (req, res) => {
-    fs.readFile("./database/yarns/polyester.json", "utf8", (err, jsonString) => {
-        if (err !== null) {
-            console.log("Failed to read the JSON file");
-            res.sendStatus(500);
-            return;
-        }
-        res.send(jsonString);
-    })
-})
-
-app.get("/items/alpaca-yarn", (req, res) => {
-    fs.readFile("./database/yarns/alpaca.json", "utf8", (err, jsonString) => {
-        if (err !== null) {
-            console.log("Failed to read the JSON file");
-            res.sendStatus(500);
-            return;
-        }
-        res.send(jsonString);
-    })
-})
-
-
 // get images
-app.get(`/image/knitting-needles/:id`, (req, res) => {
-    const imagePath = __dirname + '/public/knitting-needles/' + req.params.id;
+app.get(`/image/:name/:id`, (req, res) => {
+    const imagePath = __dirname + '/public/' + req.params.name + "/" + req.params.id;
     // res.sendFile(__dirname +imagePath)
     readingImage(imagePath, res)
 })
 
-app.get(`/image/crochet-hooks/:id`, (req, res) => {
-    const imagePath = __dirname + '/public/crochet-hooks/' + req.params.id;
-    // res.sendFile(__dirname +imagePath)
-    readingImage(imagePath, res)
-})
-
-app.get(`/image/auxiliary-tools/:id`, (req, res) => {
-    const imagePath = __dirname + '/public/auxiliary-tools/' + req.params.id;
-    // res.sendFile(__dirname +imagePath)
-    readingImage(imagePath, res)
-})
-
-app.get(`/image/acrylic-yarn/:id`, (req, res) => {
-    const imagePath = __dirname + '/public/acrylic-yarn/' + req.params.id;
-    // res.sendFile(__dirname +imagePath)
-    readingImage(imagePath, res)
-})
-
-app.get(`/image/cotton-yarn/:id`, (req, res) => {
-    const imagePath = __dirname + '/public/cotton-yarn/' + req.params.id;
-    // res.sendFile(__dirname +imagePath)
-    readingImage(imagePath, res)
-})
-
-app.get(`/image/mohair-yarn/:id`, (req, res) => {
-    const imagePath = __dirname + '/public/mohair-yarn/' + req.params.id;
-    // res.sendFile(__dirname +imagePath)
-    readingImage(imagePath, res)
-})
-
-app.get(`/image/polyester-yarn/:id`, (req, res) => {
-    const imagePath = __dirname + '/public/polyester-yarn/' + req.params.id;
-    // res.sendFile(__dirname +imagePath)
-    readingImage(imagePath, res)
-})
-app.get(`/image/alpaca-yarn/:id`, (req, res) => {
-    const imagePath = __dirname + '/public/alpaca-yarn/' + req.params.id;
-    // res.sendFile(__dirname +imagePath)
-    readingImage(imagePath, res)
-})
 
 app.get("/items/:id", (req, res) => {
     const imagePath = __dirname + '/public/items/' + req.params.id;
@@ -186,6 +64,13 @@ app.get("/items/:id", (req, res) => {
 app.get("/image/items/:id", (req, res) => {
     const imagePath = __dirname + '/public/items/' + req.params.id;
     readingImage(imagePath, res)
+})
+
+app.post("/cart", (req, res) => {
+    fs.writeFile("test.json", res, (err) => {
+        res.sendStatus(500)
+        console.log(err)
+    })
 })
 
 // Alternative:
