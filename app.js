@@ -73,9 +73,9 @@ app.get("/image/items/:id", (req, res) => {
 })
 
 app.post("/cart", (req, res) => {
-    fs.writeFile("test.json", res, (err) => {
-        res.sendStatus(500)
-        console.log(err)
+    let data = JSON.stringify(req.body)
+    fs.writeFile("./database/test.json", data, (err) => {
+        console.log("test")
     })
 })
 
