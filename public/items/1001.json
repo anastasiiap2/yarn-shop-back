@@ -1,7 +1,6 @@
-{
+[{
   "id": 1001,
-  "image1": "http://127.0.0.1:3000/image/items/1001a.png",
-  "image2": "http://127.0.0.1:3000/image/items/1001b.png",
+  "images": ["http://127.0.0.1:3000/image/items/1001a.png", "http://127.0.0.1:3000/image/items/1001b.png"],
   "options": [
     "3 mm",
     "3.25 mm",
@@ -14,4 +13,141 @@
     "6 mm"
   ],
   "description": "KnitPro basix birch wood knitting needles.\nKnitting length: 8.6 cm\nMaterial: Birch wood, metal"
-}
+},
+  {
+    "id": 1002,
+    "images": ["http://127.0.0.1:3000/image/items/1001a.png", "http://127.0.0.1:3000/image/items/1001b.png"],
+    "options": [
+      "3 mm",
+      "3.25 mm",
+      "3.5 mm",
+      "3.75 mm",
+      "4 mm",
+      "4.5 mm",
+      "5 mm",
+      "5.5 mm",
+      "6 mm",
+      "6.5 mm",
+      "7 mm",
+      "8 mm",
+      "9 mm",
+      "10 mm",
+      "12 mm",
+      "15 mm"
+    ],
+    "description": "KnitPro basix birch wood knitting needles.\nThe length of the knitting needles: 11.6 cm\nAvailable sizes: from 3 to 15mm\nMaterial: Birch wood, metal"
+  },
+  {
+    "id": 1003,
+    "images": ["https://shop.yulihobby.pl/17282-home_default/zylki-wymienne-do-drutow-knitpro-warianty.jpg"],
+    "options": [
+      "40 cm",
+      "50 cm",
+      "60 cm",
+      "80 cm",
+      "100 cm",
+      "120 cm",
+      "150 cm"
+    ],
+    "description": "KnitPro Purple Replacement Knitting Lines.\nThe set includes: a line, thread plugs (x2) and a key for fixing.\nMaterial: plastic and metal"
+  },
+  {
+    "id": 1004,
+    "images": ["https://shop.yulihobby.pl/17698-home_default/aluminiowe-druty-proste-knitpro-basix-35cm-rozne-rozmiary.jpg"],
+    "options": [
+      "2 mm",
+      "2.5 mm",
+      "3 mm",
+      "4 mm",
+      "4.5 mm",
+      "5 mm",
+      "5.5 mm",
+      "6 mm"
+    ],
+    "description": "Aluminum Knitting Needles\nKnitPro Basix Aluminum\nLength: 35cm\nMaterial: Aluminum"
+  },
+  {
+    "id": 1005,
+    "options": [
+      "2 mm",
+      "2.25 mm",
+      "2.5 mm",
+      "2.75 mm",
+      "3 mm",
+      "3.25 mm",
+      "3.5 mm",
+      "3.75 mm",
+      "4 mm",
+      "4.5 mm",
+      "5 mm",
+      "5.5 mm",
+      "6 mm",
+      "6.5 mm",
+      "7 mm",
+      "8 mm",
+      "9 mm",
+      "10 mm"
+
+    ],
+    "description": "Druty Bambusowe KnitPro Bamboo.\nRozmiary od 2mm do 10mm.\nSingle Pointed\nProducent: KnitPro"
+  },
+  {
+    "id": 1006,
+    "images": ["https://shop.yulihobby.pl/17274-home_default/aluminiowe-druty-z-zylka-120cm-knitpro-basix.jpg", "https://shop.yulihobby.pl/17273-home_default/aluminiowe-druty-z-zylka-120cm-knitpro-basix.jpg"],
+    "options": [
+      "3 mm",
+      "4 mm",
+      "5 mm"
+    ],
+    "description": "Aluminum knitting needles 120cm  KnitPro basix.\nTotal length with knitting needles: 120cm\nAvailable sizes: 3, 4, 5cm\nMaterial:  Aluminum , acrylic"
+  },
+  {
+    "id": 1007,
+    "description": "Knitting pin for blocking stitches.\nBrand: Knit Pro\nSet of 3 pieces:\nsmall (8.3 cm),\nmedium (11.5 cm),\nlarge (16.50 cm)."
+  },
+  {
+  "id": 1008,
+  "images": ["https://shop.yulihobby.pl/17274-home_default/aluminiowe-druty-z-zylka-120cm-knitpro-basix.jpg", "https://shop.yulihobby.pl/17273-home_default/aluminiowe-druty-z-zylka-120cm-knitpro-basix.jpg"],
+  "options": [
+    "3 mm",
+    "4 mm",
+    "5 mm"
+  ],
+  "description": "Aluminum knitting needles 60cm  KnitPro basix.\nTotal length of the fishing line with knitting needles: 60 cm\nAvailable sizes: 3, 4, 5mm\nMaterial:  Aluminum, acrylic"
+},
+  {
+    "id": 1009,
+    "images": ["https://shop.yulihobby.pl/17274-home_default/aluminiowe-druty-z-zylka-120cm-knitpro-basix.jpg", "https://shop.yulihobby.pl/17273-home_default/aluminiowe-druty-z-zylka-120cm-knitpro-basix.jpg"],
+    "options": [
+      "3 mm",
+      "4 mm",
+      "5 mm"
+    ],
+    "description": "Aluminum knitting needles 100cm  KnitPro basix.\nTotal length of the fishing line with knitting needles: 100 cm\nAvailable sizes: 3, 4, 5mm\nMaterial:  Aluminum, acrylic"
+  },
+  {
+    "id": 1010,
+    "images": ["https://shop.yulihobby.pl/17274-home_default/aluminiowe-druty-z-zylka-120cm-knitpro-basix.jpg", "https://shop.yulihobby.pl/17273-home_default/aluminiowe-druty-z-zylka-120cm-knitpro-basix.jpg"],
+    "options": [
+      "3 mm",
+      "4 mm",
+      "5 mm"
+    ],
+    "description": "Aluminum knitting needles 150cm  KnitPro basix.\nTotal length of the fishing line with knitting needles: 150 cm\nAvailable sizes: 3, 4, 5mm\nMaterial:  Aluminum, acrylic"
+  },
+  {
+    "id": 1011,
+    "images": ["https://shop.yulihobby.pl/17274-home_default/aluminiowe-druty-z-zylka-120cm-knitpro-basix.jpg", "https://shop.yulihobby.pl/17273-home_default/aluminiowe-druty-z-zylka-120cm-knitpro-basix.jpg"],
+    "options": [
+      "3 mm",
+      "4 mm",
+      "5 mm"
+    ],
+    "description": "Aluminum knitting needles 80cm  KnitPro basix.\nTotal length of the fishing line with knitting needles: 80 cm\nAvailable sizes: 3, 4, 5mm\nMaterial:  Aluminum, acrylic"
+  },
+  {
+    "id": 1012,
+    "images": ["https://shop.yulihobby.pl/18178-home_default/zestaw-drutow-ponczoszniczych-drops-pro-classic.jpg", "https://shop.yulihobby.pl/18176-home_default/zestaw-drutow-ponczoszniczych-drops-pro-classic.jpg"],
+    "description": "Drops Pro Classic Sock Knitting Needles\nA very handy set of smooth and light knitting needles.\nSizes: 2.0 / 2.5 / 3.0 / 3.5 / 4.0mm\nAll in a clip-closed pouch."
+  }
+]

@@ -57,9 +57,17 @@ app.get(`/image/:name/:id`, (req, res) => {
 
 
 app.get("/item/:id", (req, res) => {
-    fs.readFile(__dirname + `/public/items/${req.params.id}.json`, "utf8", (err, jsonString) => {
+    fs.readFile(__dirname + `/public/items/1001.json`, "utf8", (err, jsonString) => {
+        if(err){
+            console.error(err);
+            res.sendStatus(500)
+            return
+        }
         try {
-            res.send(jsonString);
+            let array = JSON.parse(jsonString)
+            let requestedId = Number.parseInt(req.params.id)
+            console.log(array.find(element => element.id === requestedId));
+            res.send(array.find(element => element.id === requestedId));
         } catch (error) {
             console.error("Failed to read the JSON file " + error);
             res.sendStatus(500);
@@ -72,10 +80,10 @@ app.get("/image/items/:id", (req, res) => {
     readingImage(imagePath, res)
 })
 
-app.post("/cart", (req, res) => {
+app.put("/cart", (req, res) => {
     let data = JSON.stringify(req.body)
-    fs.writeFile("./database/test.json", data, (err) => {
-        console.log("test")
+    fs.writeFile("./database/test.json", data,  (err) => {
+
     })
 })
 
